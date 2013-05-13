@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>MagicNet</title>
+    </head>
+    <body>
+        <div data-role="page" id="mainpage" data-theme="a">
+            <div data-role="header"><h3>Новости</h3></div>
+            <div data-role="content">
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-theme="c" id="news_link">
+                        <a href="#news" data-transition="slide">
+                            Новости
+                        </a>
+                    </li>
+                    <li data-theme="c" id="map_link">
+                        <a href="#map" data-transition="slide">
+                            Мы на карте
+                        </a>
+                    </li>
+                    <li data-theme="c" id="debug_link">
+                         <a href="#debug" data-transition="slide">
+                            Debug
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#contact" data-transition="slide">
+                            Контакт
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="page" id="news" data-theme="a">
+                <div data-role="header"><h3>Новости</h3></div>
+                <div data-role="content">
+                    <ul data-role="listview" data-theme="a" data-icon="false" class="magic_list" id="news_list">
+
+                    </ul>
+                    <!--a href="#" id="more_news" data-role="button">Ещё</a-->
+                </div>
+        </div>
+        <div data-role="page" id="map" data-theme="a">
+                <div id="map_header" data-role="header"><h3>Мы на карте</h3></div>
+                <div data-role="content" data-theme="a">
+                    <div id="map_canvas"></div>
+                </div>
+        </div>
+        <div data-role="page" id="contact" data-theme="a">
+                <div data-role="header"><h3>Контакт</h3></div>
+                <div data-role="content">
+                    <div class="center_image">
+                        <picture alt="logo">
+                          <source src="img/logo_xhdpi.png" media="(min-width:600px) and (max-width:800px)" />
+                          <source src="img/logo_hdpi.png" media="(min-width:300px) and (max-width:600px)" />
+                          <source src="img/logo_mdpi.png" media="(min-width:240px) and (max-width:300px)" />
+                          <source src="img/logo_ldpi.png" media="(max-width:240px)" />
+                          <!-- fallback for browsers without support -->
+                          <img src="img/logo_mdpi.png" alt="logo" />
+                        </picture>
+                    </div>
+                    <p>
+                        OÜ Interframe<br />
+                        Reg.nr. 10176042<br />
+                        <a href="#map" data-transition="slide">Kangelaste pr. 41-38</a><br />
+                        20604 Narva<br />
+                        Swedbank a/a 1120106032<br />
+                        SEB a/a 10220090136013<br />
+                        support@magicnet.ee <br />
+                        +372 35 9 22 33<br />
+                        +372 53 403 662<br />
+                    </p>
+                    <a data-role="button" href="tel:+37253403662">
+                        Позвонить на мобильный
+                    </a>
+                    <a data-role="button" href="tel:+3723592233">
+                        Позвонить на настольный
+                    </a>
+                    <a data-role="button" href="mailto:support@magicnet.ee">
+                        Написать письмо
+                    </a>
+                    <a data-role="button" href="mailto:support@magicnet.ee?subject=Прошу%20сменить%20пакет&body=Имя:%0D%0AФамилия:%0D%0AАдрес%20подключения:%20(Улица Дом-Квартира)%0D%0A%0D%0AЗдравствуйте,%0D%0A%0D%0AПрошу%20сменить%20текущий%20пакет%20на%20пакет%20(название%20пакета)%20стоимостью%20(стоимость%20пакета)%20с%20первого%20числа%20(месяц)%20(год)%20года.%0D%0A%0D%0AСпасибо.%0D%0A">
+                        Сменить пакет
+                    </a>
+                    <a data-role="button" href="mailto:support@magicnet.ee?subject=Прошу%20выделить%20внешний%20IP&body=Имя:%0D%0AФамилия:%0D%0AАдрес%20подключения:%20(Улица Дом-Квартира)%0D%0A%0D%0AЗдравствуйте,%0D%0A%0D%0AПрошу%20выделить%20внешний%20ip%20адрес.%0D%0AЖелаемый%20логин:%20(в%20нижнем%20регистре)%0D%0AЖелаемый%20пароль:%20(в%20нижнем%20регистре)%0D%0A%0D%0AСпасибо.%0D%0A">
+                        Получить внешний IP
+                    </a>
+                </div>
+        </div>
+        <div data-role="page" id="debug" data-theme="a">
+                <div data-role="header"><h3>Debug</h3></div>
+                <div data-role="content">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <h4>
+                                Device
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="device_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Phonegap
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="phonegap_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Platform
+                            </h4>
+                        </div>
+                        <div class="ui-block-b" >
+                            <h5 id="platform_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Uuid
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="uuid_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Version
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="version_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                App Version
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="app_version_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                App name
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="app_name_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Debug
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="debug_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Device width
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="device_width_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Device height
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="device_height_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Window width
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="window_width_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Window height
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="window_height_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Orientation
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="orientation_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                DPI
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="dpi_value"></h5>
+                        </div>
+                        <div class="ui-block-a">
+                            <h4>
+                                Pixel Ratio
+                            </h4>
+                        </div>
+                        <div class="ui-block-b">
+                            <h5 id="pixelratio_value"></h5>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div data-role="page" id="nointernet" data-close-btn="none">
+            <div data-role="header" data-theme="a"><h4>А интернета то нету!</h4></div>
+            <div data-role="content" data-theme="d">Включите интернет на вашем устройстве.</div>
+            <div data-theme="a" data-role="footer">
+                <a id="offline" data-role="button" class="ui-btn-left">
+                    Оффлайн режим
+                </a>
+                <h3>
+                </h3>
+                <a id="close" data-role="button" class="ui-btn-right">
+                    Закрыть приложение
+                </a>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova-2.6.0.js"></script>
+        <script type="text/javascript" src="js/html5picture.js"></script>
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.1.min.js"></script>
+        <script type="text/javascript" src="js/nano.js"></script>
+        <script type="text/javascript" src="js/jquery.timeago.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var pictureSupport = new HTML5Picture();
+                pictureSupport.init();
+            };
+            app.initialize();
+            $('#close').on("click", function(){
+                app.closeApp();
+            });
+            $('#offline').on("click", function(){
+                app.offline();
+            });
+            $('#debug').on("pageshow", function(){
+                 debug_page.load();
+            });
+            $('#news').on('pagecreate', function(event, ui){
+                 news_page.load();
+            });
+            $('#more_news').on("click", function(){
+                 news_page.more();
+            });
+            $('#map').on('pageshow', function(event, ui){
+                 map_page.load();
+            });
+        </script>
+    </body>
+</html>
